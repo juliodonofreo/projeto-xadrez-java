@@ -16,12 +16,4 @@ public class PecaXadrez extends Peca {
         return cor;
     }
 
-    protected String pintarPeca(String emoji){
-        if(cor == Cor.PRETO) {
-            return "\033[30m" + emoji + "\033[m";
-        }
-        else {
-            return emoji;
-        }
-    }
 }
