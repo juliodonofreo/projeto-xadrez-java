@@ -5,11 +5,23 @@ import xadrez.PecaXadrez;
 public class Interface {
 
     public static void printTabuleiro(PecaXadrez[][] pecas) {
+
         for (int i = 0; i < pecas.length; i++) {
             System.out.print(8 - i + " ");
+
             for(int j = 0; j < pecas.length; j++){
-                printPeca(pecas[i][j]);
+
+                if((j + i) % 2 == 0) {
+                    System.out.print("\033[47m");
+                    printPeca(pecas[i][j]);
+                    System.out.print("\033[m");
+                }
+
+                else{
+                    printPeca(pecas[i][j]);
+                }
             }
+
             System.out.println();
         }
 
