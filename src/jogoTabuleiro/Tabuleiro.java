@@ -74,7 +74,7 @@ public class Tabuleiro {
 
     public boolean haPeca(Posicao posicao) {
         if (!posicaoExiste(posicao.getLinha(), posicao.getColuna())){
-            throw new BoardException("A posição não está no tabuleiro;");
+            throw new BoardException("A posição não esta no tabuleiro;");
         }
 
         return peca(posicao) != null;

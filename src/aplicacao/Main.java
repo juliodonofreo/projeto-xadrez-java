@@ -1,9 +1,11 @@
 package aplicacao;
 
+import xadrez.ChessException;
 import xadrez.PartidaXadrez;
 import xadrez.PecaXadrez;
 import xadrez.PosicaoXadrez;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -13,16 +15,27 @@ public class Main {
         PartidaXadrez partida = new PartidaXadrez();
 
         while (true) {
-            Interface.printTabuleiro(partida.getPecas());
-            System.out.println();
-            System.out.print("Posicao de origem: ");
-            PosicaoXadrez origem = Interface.lerPosicaoXadrez(sc);
+            try {
+                Interface.limparTela();
+                Interface.printTabuleiro(partida.getPecas());
+                System.out.println();
+                System.out.print("Posicao de origem: ");
+                PosicaoXadrez origem = Interface.lerPosicaoXadrez(sc);
 
-            System.out.println();
-            System.out.print("Posicao de destino: ");
-            PosicaoXadrez destino = Interface.lerPosicaoXadrez(sc);
+                System.out.println();
+                System.out.print("Posicao de destino: ");
+                PosicaoXadrez destino = Interface.lerPosicaoXadrez(sc);
 
-            PecaXadrez pecaCapturada = partida.fazerMovimentoXadrez(origem, destino);
+                PecaXadrez pecaCapturada = partida.fazerMovimentoXadrez(origem, destino);
+            }
+            catch (ChessException e) {
+                System.out.println(e.getMessage());
+                sc.nextLine();
+            }
+            catch (InputMismatchException e) {
+                System.out.println(e.getMessage());
+                sc.nextLine();
+            }
         }
     }
 }

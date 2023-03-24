@@ -28,6 +28,10 @@ public class Interface {
     public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
     public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 
+    public static void limparTela() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
     public static PosicaoXadrez lerPosicaoXadrez(Scanner sc) {
         try {
             String s = sc.nextLine();
@@ -36,7 +40,7 @@ public class Interface {
             return new PosicaoXadrez(coluna, linha);
         }
         catch (RuntimeException e) {
-            throw new InputMismatchException("Erro instanciando a PosicaoXadrez, valores válidos: a1 até h8. ");
+            throw new InputMismatchException("Erro instanciando PosicaoXadrez, valores validos: a1 ate h8. ");
         }
     }
     public static void printTabuleiro(PecaXadrez[][] pecas) {
