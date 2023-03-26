@@ -4,8 +4,8 @@ import jogoTabuleiro.Posicao;
 
 public class PosicaoXadrez{
 
-    private char coluna;
-    private int linha;
+    private final char coluna;
+    private final int linha;
 
     public PosicaoXadrez(char coluna, int linha) {
         if (coluna < 'a' || coluna > 'h' || linha < 1 || linha > 8) {

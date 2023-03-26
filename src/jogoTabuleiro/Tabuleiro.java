@@ -2,9 +2,9 @@ package jogoTabuleiro;
 
 public class Tabuleiro {
 
-    private int linhas;
-    private int colunas;
-    private  Peca[][] pecas;
+    private final int linhas;
+    private final int colunas;
+    private Peca[][] pecas;
 
     public Tabuleiro(int linhas, int colunas) {
         if (linhas < 1 || colunas < 1) {
