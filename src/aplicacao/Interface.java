@@ -1,6 +1,7 @@
 package aplicacao;
 
 import xadrez.Cor;
+import xadrez.PartidaXadrez;
 import xadrez.PecaXadrez;
 import xadrez.PosicaoXadrez;
 
@@ -42,6 +43,13 @@ public class Interface {
         catch (RuntimeException e) {
             throw new InputMismatchException("Erro instanciando PosicaoXadrez, valores validos: a1 ate h8. ");
         }
+    }
+
+    public static void printPartida(PartidaXadrez partida) {
+        printTabuleiro(partida.getPecas());
+        System.out.println("Turno: " + partida.getTurno());
+        System.out.println("Esperando jogador: " + partida.getJogadorAtual());;
+
     }
     public static void printTabuleiro(PecaXadrez[][] pecas) {
 
