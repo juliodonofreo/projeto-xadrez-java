@@ -56,6 +56,13 @@ public class Interface {
         System.out.println("Turno: " + partida.getTurno());
         System.out.println("Esperando jogador: " + partida.getJogadorAtual());;
 
+        if(partida.isCheckMate()){
+            System.out.println("CHECKMATE!");
+            System.out.print("Vencedor: " + partida.getJogadorAtual());
+        }
+        if(partida.isCheck()) {
+            System.out.println("CHECK!");
+        }
     }
     public static void printTabuleiro(PecaXadrez[][] pecas) {
 
@@ -97,10 +104,12 @@ public class Interface {
                 else{
                     printPeca(pecas[i][j], movimentosPossiveis[i][j]);
                 }
+                System.out.print(ANSI_RESET);
             }
 
             System.out.println();
         }
+        System.out.println(ANSI_RESET);
 
         System.out.println("   a  b  c  d  e  f  g  h");
     }
