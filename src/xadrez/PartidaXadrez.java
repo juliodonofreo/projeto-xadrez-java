@@ -3,6 +3,7 @@ package xadrez;
 import jogoTabuleiro.Peca;
 import jogoTabuleiro.Posicao;
 import jogoTabuleiro.Tabuleiro;
+import xadrez.pecas.Peao;
 import xadrez.pecas.Rei;
 import xadrez.pecas.Torre;
 
@@ -206,12 +207,29 @@ public class PartidaXadrez {
     }
 
     private void iniciarPartida(){
-        posicionarNovaPeca('h', 7, new Torre(tabuleiro, Cor.BRANCO));
-        posicionarNovaPeca('d', 1, new Torre(tabuleiro, Cor.BRANCO));
+
+        posicionarNovaPeca('a', 1, new Torre(tabuleiro, Cor.BRANCO));
         posicionarNovaPeca('e', 1, new Rei(tabuleiro, Cor.BRANCO));
+        posicionarNovaPeca('h', 1, new Torre(tabuleiro, Cor.BRANCO));
+        posicionarNovaPeca('a', 2, new Peao(tabuleiro, Cor.BRANCO));
+        posicionarNovaPeca('b', 2, new Peao(tabuleiro, Cor.BRANCO));
+        posicionarNovaPeca('c', 2, new Peao(tabuleiro, Cor.BRANCO));
+        posicionarNovaPeca('d', 2, new Peao(tabuleiro, Cor.BRANCO));
+        posicionarNovaPeca('e', 2, new Peao(tabuleiro, Cor.BRANCO));
+        posicionarNovaPeca('f', 2, new Peao(tabuleiro, Cor.BRANCO));
+        posicionarNovaPeca('g', 2, new Peao(tabuleiro, Cor.BRANCO));
+        posicionarNovaPeca('h', 2, new Peao(tabuleiro, Cor.BRANCO));
 
-        posicionarNovaPeca('b', 8, new Torre(tabuleiro, Cor.PRETO));
-        posicionarNovaPeca('a', 8, new Rei(tabuleiro, Cor.PRETO));
-
+        posicionarNovaPeca('a', 8, new Torre(tabuleiro, Cor.PRETO));
+        posicionarNovaPeca('e', 8, new Rei(tabuleiro, Cor.PRETO));
+        posicionarNovaPeca('h', 8, new Torre(tabuleiro, Cor.PRETO));
+        posicionarNovaPeca('a', 7, new Peao(tabuleiro, Cor.PRETO));
+        posicionarNovaPeca('b', 7, new Peao(tabuleiro, Cor.PRETO));
+        posicionarNovaPeca('c', 7, new Peao(tabuleiro, Cor.PRETO));
+        posicionarNovaPeca('d', 7, new Peao(tabuleiro, Cor.PRETO));
+        posicionarNovaPeca('e', 7, new Peao(tabuleiro, Cor.PRETO));
+        posicionarNovaPeca('f', 7, new Peao(tabuleiro, Cor.PRETO));
+        posicionarNovaPeca('g', 7, new Peao(tabuleiro, Cor.PRETO));
+        posicionarNovaPeca('h', 7, new Peao(tabuleiro, Cor.PRETO));
     }
 }
