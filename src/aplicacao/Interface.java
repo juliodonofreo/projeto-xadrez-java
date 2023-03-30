@@ -53,15 +53,20 @@ public class Interface {
         System.out.println();
         printPecasCapturadas(capturadas);
         System.out.println();
-        System.out.println("Turno: " + partida.getTurno());
-        System.out.println("Esperando jogador: " + partida.getJogadorAtual());;
 
-        if(partida.isCheckMate()){
+        if(!partida.isCheckMate()) {
+
+            if (partida.isCheck()) {
+                System.out.println("CHECK!");
+            }
+            System.out.println("Turno: " + partida.getTurno());
+            System.out.println("Esperando jogador: " + partida.getJogadorAtual());
+
+        }
+        else{
             System.out.println("CHECKMATE!");
             System.out.print("Vencedor: " + partida.getJogadorAtual());
-        }
-        if(partida.isCheck()) {
-            System.out.println("CHECK!");
+
         }
     }
     public static void printTabuleiro(PecaXadrez[][] pecas) {
@@ -135,8 +140,8 @@ public class Interface {
     }
 
     private static void printPecasCapturadas(List<PecaXadrez> capturadas){
-       List<PecaXadrez> branco = capturadas.stream().filter(x -> x.getCor() == Cor.BRANCO).toList();
-       List<PecaXadrez> preto = capturadas.stream().filter(x -> x.getCor() == Cor.PRETO).toList();
+        List<PecaXadrez> branco = capturadas.stream().filter(x -> x.getCor() == Cor.BRANCO).toList();
+        List<PecaXadrez> preto = capturadas.stream().filter(x -> x.getCor() == Cor.PRETO).toList();
         System.out.println("Peças capturadas: ");
         System.out.print("Brancas: ");
         System.out.print(ANSI_WHITE);
