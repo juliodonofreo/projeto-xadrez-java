@@ -43,6 +43,9 @@ public class Main {
                 System.out.println(e.getMessage());
                 sc.nextLine();
             }
+            catch (IllegalStateException e) {
+                partida.setCheckMate(true);
+            }
         }
 
         Interface.limparTela();
