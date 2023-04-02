@@ -43,10 +43,14 @@ public class Main {
                 if(partida.getPromovida() != null) {
                     System.out.print("Digite peça para promoção (BP/CA/RA/TR): ");
                     String tipo = sc.nextLine().toUpperCase();
+                    while (!tipo.equals("RA") && !tipo.equals("CA") && !tipo.equals("TR") && !tipo.equals("BP")) {
+                        System.out.print("Valor inválido! Digite peça para promoção (BP/CA/RA/TR): ");
+                        tipo = sc.nextLine().toUpperCase();
+                    }
                     partida.substituirPecaPromovida(tipo);
                 }
             }
-            catch (ChessException | InputMismatchException | InvalidParameterException e) {
+            catch (ChessException | InputMismatchException e) {
                 System.out.println(e.getMessage());
                 sc.nextLine();
             }
