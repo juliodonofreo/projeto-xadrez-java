@@ -5,6 +5,7 @@ import xadrez.PartidaXadrez;
 import xadrez.PecaXadrez;
 import xadrez.PosicaoXadrez;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -38,8 +39,14 @@ public class Main {
                 if(pecaCapturada != null) {
                     capturadas.add(pecaCapturada);
                 }
+
+                if(partida.getPromovida() != null) {
+                    System.out.print("Digite peça para promoção (BP/CA/RA/TR): ");
+                    String tipo = sc.nextLine().toUpperCase();
+                    partida.substituirPecaPromovida(tipo);
+                }
             }
-            catch (ChessException | InputMismatchException e) {
+            catch (ChessException | InputMismatchException | InvalidParameterException e) {
                 System.out.println(e.getMessage());
                 sc.nextLine();
             }
